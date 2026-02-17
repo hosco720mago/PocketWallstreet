@@ -1,3 +1,11 @@
+.bg-main {
+  background-color: #f8fafc;
+}
+
+.text-main {
+  color: #1f2937;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
