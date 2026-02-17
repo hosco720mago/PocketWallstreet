@@ -1,11 +1,13 @@
-.bg-main {
-  background-color: #f8fafc;
-}
-
-.text-main {
-  color: #1f2937;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
