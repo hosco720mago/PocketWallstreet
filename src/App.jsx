@@ -130,6 +130,8 @@ const THEMES = {
     id: 'neon', name: 'Neon Dark', bg: '#050505', text: '#ffffff', 
     panel: 'rgba(20, 20, 20, 0.8)', border: 'rgba(255, 255, 255, 0.1)',
     accent: '#00ff9d', shadow: 'rgba(0,255,157,0.5)' 
+    isGradient: true, 
+    bgImage: 'radial-gradient(circle at 50% 50%, #2a004a 0%, #000000 100%)'
   },
   light: { 
     id: 'light', name: 'Day Mode', bg: '#f2f4f7', text: '#111827', 
