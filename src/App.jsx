@@ -9,62 +9,58 @@ import {
 } from 'lucide-react';
 
 // ==========================================
-// 🎨 CONFIGURACIÓN DE IMÁGENES (TUS 40 FOTOS)
+// 🎨 CONFIGURACIÓN DE IMÁGENES
 // ==========================================
 const USER_IMAGES = {
-  // Fondo para el tema "Wall St."
   wallStreetBg: "https://media.istockphoto.com/id/1497253868/photo/the-new-york-stock-exchange-on-the-wall-street-sign.jpg?s=612x612&w=0&k=20&c=B0-1n8NV_2CQVBSAC2L-1BGWI56rh5EosQqC-KD9X98=",
-  
-  // Catálogo de Noticias
   news: [
-    "https://d1y8sb8igg2f8e.cloudfront.net/images/7_things_you_should_read_about_technologys_rol.width-800.jpg", // 0: Tecnología General
-    "https://thelogisticsworld.com/wp-content/uploads/2023/02/2023-02-13T213252Z_1_LYNXMPEJ1C0XJ_RTROPTP_4_AMAZON-COM-RESULTS-1.jpg", // 1: Amazon
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYbtKt7DvTQNY95S_bze0ua1FIyoeOak64Iw&s", // 2: Tesla / Autos eléctricos
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFokR2F9-zF_CsUqntohJTGpOqMZ7N8eGclQ&s", // 3: Mercado Alcista (Verde)
-    "https://cdn.corporatefinanceinstitute.com/assets/downtrend.jpeg", // 4: Mercado Bajista (Rojo)
-    "https://humanidades.com/wp-content/uploads/2017/03/ciudad-3-e1565900105563-800x400.jpg", // 5: Ciudad / Economía Urbana
-    "https://debateyconvergencia.com.ar/wp-content/uploads/2025/05/eeuu_dolar.jpg", // 6: Dólar / Economía USA
-    "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8640x5760+0+0/resize/1100/quality/50/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F1c%2Fec%2F620fc76d4ec2a7f10054eed45731%2Fgettyimages-2251825549.jpg", // 7: Política USA / Votaciones
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0k4HT8XcosU-e_aZQIBA3VC99ccXO23dkKQ&s", // 8: Dinero / Finanzas
-    "https://images.stockcake.com/public/8/2/e/82e87d5a-3a8a-4591-982d-ddd136e78f77_large/executive-board-meeting-stockcake.jpg", // 9: Corporativo
-    "https://www.arup.com/globalassets/images/insights/publications/rethinking-the-factory-banner.jpg", // 10: Fábrica / Industria
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TOTkc5labWHQU5j3dlcwGZbW8mK68jILYg&s", // 11: Wall Street
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR278LUNF7ETCmxxKFga82vG6blyvTnD8yRuA&s", // 12: Bitcoin / Crypto
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOOaXfl4cS2w8Xf6xRynsW0SIDrkzOZzq9g&s", // 13: Casa Blanca / Gobierno USA
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqdDHPeo1n7FDQfdYF4U1cmAR7kGOPY525kQ&s", // 14: China / Shanghai
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw-DiLEb_OtJ7rVbPWYqXv_NQ1pm-cQIAo8g&s", // 15: Petróleo / Oil
-    "https://www.goldmarket.fr/wp-content/uploads/2025/09/ae3419e3thumbnail.jpeg", // 16: Oro
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXZ1T8_cf0uanoL-uSzYhGEUHjVHaCT2bRRg&s", // 17: Banco Central Europeo
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvr15LmpXvrytKmapb9_Ax-ed1rbNx-Q3jSg&s", // 18: Apple
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuBNN0HHfDb1V1fQ7V8RfatteS1LgDk2yHvw&s", // 19: Microsoft
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVt3x5p0dIKZsPfX_3H9xGYeMZe_us2YskA&s", // 20: Meta
-    "https://media.istockphoto.com/id/644191738/es/foto/se%C3%B1al-de-banco.jpg?s=612x612&w=0&k=20&c=uyxv7EarIVvIxZ4mkO6s55uyWmPrhp9zDtL8gYZtPe4=", // 21: Bancos
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2x4P2KVvcOXRL3ptUaVD5MFI1B6-OE_RSpg&s", // 22: Goldman Sachs / Banca de inversión
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBuFB9spF6TR3oIwVXnA45Dj_W5Xb2CvvtdQ&s", // 23: Congreso USA
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxaPs2WrX4Gi4voDdZ9CH7rBhLq47kmWFxSA&s", // 24: Japón
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kXhIxFhZBQcdO5Sueyim9HBG3aY9JEPEkg&s", // 25: Fábrica EV
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDplGS4rVOo1pExzJpNOSVTp2_F7WzJNHVrw&s", // 26: Samsung
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7XDhaPs_rbtjoEoPThy5FSOWhuklPyyRbmw&s", // 27: Intel / Chips
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJI0zozGXWPDba2IO1sa6Bn5q9910vKq35TA&s", // 28: Netflix
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5EQVkQvQxIdyslQVWEKUHy9zS9CuyWVObCg&s", // 29: Consumo / Retail
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaODDhQHSFWUga4iQwH73sLkPW5CjcMnUIg&s", // 30: Construcción
-    "https://cdn.flydays.co.uk/imgs/news/how-do-planes-take-off-the-science-behind-the-flight.jpg", // 31: Aerolíneas / Aviación
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ag0a9L-xQdDUsOnp-EwTjn7h7Jd2lsJMDg&s", // 32: Comercio Global / Shipping
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWo2eGugFYZrQNRIo3-5QuddeL-fkLusqI0Q&s", // 33: Farmacéutica
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4vEau2jVZUwMPOoYPm61-xQOMKR93u5u2A&s", // 34: Energía Solar
-    "https://cdn-3.expansion.mx/dims4/default/77cba30/2147483647/strip/true/crop/1254x836+0+0/resize/1200x800!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F3a%2Fe9%2F77062c714550babcca57d462e747%2Fistock-2162230248.jpg", // 35: Energía Eólica
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsaqhDTGQIbaAsf_wZECHgmuKQAI_VlgMqOg&s", // 36: Bienes Raíces
-    "https://ammitechnologies.com/wp-content/uploads/2022/04/shutterstock_259506596-1068x718-1-930x620.jpg", // 37: Semiconductores
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT39T42O85mwcF--4REizG8v888e1hN9FZPbg&s", // 38: Hedge Funds
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYgS-5LFd3eEp-GJ6dKdo_6ADX4aQC8SGmMA&s" // 39: Crisis Financiera
+    "https://d1y8sb8igg2f8e.cloudfront.net/images/7_things_you_should_read_about_technologys_rol.width-800.jpg",
+    "https://thelogisticsworld.com/wp-content/uploads/2023/02/2023-02-13T213252Z_1_LYNXMPEJ1C0XJ_RTROPTP_4_AMAZON-COM-RESULTS-1.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYbtKt7DvTQNY95S_bze0ua1FIyoeOak64Iw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFokR2F9-zF_CsUqntohJTGpOqMZ7N8eGclQ&s",
+    "https://cdn.corporatefinanceinstitute.com/assets/downtrend.jpeg",
+    "https://humanidades.com/wp-content/uploads/2017/03/ciudad-3-e1565900105563-800x400.jpg",
+    "https://debateyconvergencia.com.ar/wp-content/uploads/2025/05/eeuu_dolar.jpg",
+    "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8640x5760+0+0/resize/1100/quality/50/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F1c%2Fec%2F620fc76d4ec2a7f10054eed45731%2Fgettyimages-2251825549.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0k4HT8XcosU-e_aZQIBA3VC99ccXO23dkKQ&s",
+    "https://images.stockcake.com/public/8/2/e/82e87d5a-3a8a-4591-982d-ddd136e78f77_large/executive-board-meeting-stockcake.jpg",
+    "https://www.arup.com/globalassets/images/insights/publications/rethinking-the-factory-banner.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TOTkc5labWHQU5j3dlcwGZbW8mK68jILYg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR278LUNF7ETCmxxKFga82vG6blyvTnD8yRuA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOOaXfl4cS2w8Xf6xRynsW0SIDrkzOZzq9g&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqdDHPeo1n7FDQfdYF4U1cmAR7kGOPY525kQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw-DiLEb_OtJ7rVbPWYqXv_NQ1pm-cQIAo8g&s",
+    "https://www.goldmarket.fr/wp-content/uploads/2025/09/ae3419e3thumbnail.jpeg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXZ1T8_cf0uanoL-uSzYhGEUHjVHaCT2bRRg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvr15LmpXvrytKmapb9_Ax-ed1rbNx-Q3jSg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuBNN0HHfDb1V1fQ7V8RfatteS1LgDk2yHvw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVt3x5p0dIKZsPfX_3H9xGYeMZe_us2YskA&s",
+    "https://media.istockphoto.com/id/644191738/es/foto/se%C3%B1al-de-banco.jpg?s=612x612&w=0&k=20&c=uyxv7EarIVvIxZ4mkO6s55uyWmPrhp9zDtL8gYZtPe4=",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2x4P2KVvcOXRL3ptUaVD5MFI1B6-OE_RSpg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBuFB9spF6TR3oIwVXnA45Dj_W5Xb2CvvtdQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxaPs2WrX4Gi4voDdZ9CH7rBhLq47kmWFxSA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kXhIxFhZBQcdO5Sueyim9HBG3aY9JEPEkg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDplGS4rVOo1pExzJpNOSVTp2_F7WzJNHVrw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7XDhaPs_rbtjoEoPThy5FSOWhuklPyyRbmw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJI0zozGXWPDba2IO1sa6Bn5q9910vKq35TA&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5EQVkQvQxIdyslQVWEKUHy9zS9CuyWVObCg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaODDhQHSFWUga4iQwH73sLkPW5CjcMnUIg&s",
+    "https://cdn.flydays.co.uk/imgs/news/how-do-planes-take-off-the-science-behind-the-flight.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ag0a9L-xQdDUsOnp-EwTjn7h7Jd2lsJMDg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWo2eGugFYZrQNRIo3-5QuddeL-fkLusqI0Q&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4vEau2jVZUwMPOoYPm61-xQOMKR93u5u2A&s",
+    "https://cdn-3.expansion.mx/dims4/default/77cba30/2147483647/strip/true/crop/1254x836+0+0/resize/1200x800!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F3a%2Fe9%2F77062c714550babcca57d462e747%2Fistock-2162230248.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsaqhDTGQIbaAsf_wZECHgmuKQAI_VlgMqOg&s",
+    "https://ammitechnologies.com/wp-content/uploads/2022/04/shutterstock_259506596-1068x718-1-930x620.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT39T42O85mwcF--4REizG8v888e1hN9FZPbg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYgS-5LFd3eEp-GJ6dKdo_6ADX4aQC8SGmMA&s"
   ]
 };
 
-// --- HELPER: CEREBRO DE IMÁGENES (V3.0) ---
+// --- HELPER: CEREBRO DE IMÁGENES ---
 const getSmartImage = (headline, summary) => {
   const text = (headline + " " + summary).toLowerCase();
   
-  // 1. EMPRESAS TECH & GIGANTES (Prioridad Máxima)
   if (text.includes("apple") || text.includes("iphone") || text.includes("mac") || text.includes("aapl")) return USER_IMAGES.news[18];
   if (text.includes("microsoft") || text.includes("windows") || text.includes("azure") || text.includes("msft")) return USER_IMAGES.news[19];
   if (text.includes("meta") || text.includes("facebook") || text.includes("instagram") || text.includes("zuckerberg")) return USER_IMAGES.news[20];
@@ -74,7 +70,6 @@ const getSmartImage = (headline, summary) => {
   if (text.includes("samsung") || text.includes("galaxy")) return USER_IMAGES.news[26];
   if (text.includes("intel") || text.includes("intc")) return USER_IMAGES.news[27];
 
-  // 2. ECONOMÍA, POLÍTICA Y MACRO (Prioridad Alta)
   if (text.includes("china") || text.includes("asia") || text.includes("beijing") || text.includes("xi ") || text.includes("alibaba")) return USER_IMAGES.news[14];
   if (text.includes("fed ") || text.includes("powell") || text.includes("rates") || text.includes("inflation") || text.includes("cpi") || text.includes("gdp") || text.includes("economy")) return USER_IMAGES.news[6];
   if (text.includes("biden") || text.includes("white house") || text.includes("trump") || text.includes("president") || text.includes("election")) return USER_IMAGES.news[13];
@@ -82,7 +77,6 @@ const getSmartImage = (headline, summary) => {
   if (text.includes("europe") || text.includes("ecb") || text.includes("euro") || text.includes("lagarde")) return USER_IMAGES.news[17];
   if (text.includes("bank") || text.includes("finance") || text.includes("lending") || text.includes("recession")) return USER_IMAGES.news[21];
 
-  // 3. SECTORES ESPECÍFICOS
   if (text.includes("auto") || text.includes("ev ") || text.includes("vehicle") || text.includes("ford") || text.includes("gm ")) return USER_IMAGES.news[25];
   if (text.includes("chip") || text.includes("semi") || text.includes("nvidia") || text.includes("amd") || text.includes("tsmc")) return USER_IMAGES.news[37];
   if (text.includes("ai ") || text.includes("artificial") || text.includes("gpt") || text.includes("bot")) return USER_IMAGES.news[30];
@@ -98,7 +92,6 @@ const getSmartImage = (headline, summary) => {
   if (text.includes("home") || text.includes("housing") || text.includes("real estate")) return USER_IMAGES.news[36];
   if (text.includes("gold") || text.includes("silver") || text.includes("metal") || text.includes("mining")) return USER_IMAGES.news[16];
 
-  // 4. SENTIMIENTO DE MERCADO Y BOLSA (Genérico)
   if (text.includes("rise") || text.includes("bull") || text.includes("surge") || text.includes("record") || text.includes("high")) return USER_IMAGES.news[3];
   if (text.includes("fall") || text.includes("bear") || text.includes("drop") || text.includes("crash") || text.includes("down") || text.includes("loss") || text.includes("sell-off")) return USER_IMAGES.news[4];
   
@@ -129,9 +122,8 @@ const THEMES = {
   neon: { 
     id: 'neon', name: 'Neon Dark', bg: '#050505', text: '#ffffff', 
     panel: 'rgba(20, 20, 20, 0.8)', border: 'rgba(255, 255, 255, 0.1)',
-    accent: '#00ff9d', shadow: 'rgba(0,255,157,0.5)' 
-    isGradient: true, 
-    bgImage: 'radial-gradient(circle at 50% 50%, #2a004a 0%, #000000 100%)'
+    accent: '#00ff9d', shadow: 'rgba(0,255,157,0.5)',
+    // NOTA: El fondo dinámico se maneja en getBackgroundStyle para intensidad variable
   },
   light: { 
     id: 'light', name: 'Day Mode', bg: '#f2f4f7', text: '#111827', 
@@ -167,6 +159,16 @@ const getStyleTag = (theme) => `
 .modal-enter { animation: modalEnter 0.2s ease-out forwards; }
 .modal-exit { animation: modalExit 0.2s ease-in forwards; }
 
+/* Ocultar spinners de input number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .glass-panel {
   background: ${theme.panel};
   backdrop-filter: ${theme.backdrop || 'blur(16px)'};
@@ -183,7 +185,7 @@ body {
   background-position: center; 
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-image: ${theme.isGradient ? theme.bgImage : theme.bgImage};
+  /* background-image is handled inline for dynamic neon */
   background-color: ${theme.bg};
 }
 .bg-overlay {
@@ -198,6 +200,20 @@ const formatNumber = (num) => {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(num);
+};
+
+// HELPER DE FONDO DINÁMICO
+const getBackgroundStyle = (theme, viewMode) => {
+    if (theme.id === 'neon') {
+        const intense = 'radial-gradient(circle at 50% 100%, #006040 0%, #050505 55%, #000000 100%)';
+        const subtle = 'radial-gradient(circle at 50% 100%, #002b1b 0%, #050505 65%, #000000 100%)';
+        return { 
+            backgroundImage: viewMode === 'market' ? intense : subtle,
+            backgroundColor: theme.bg 
+        };
+    }
+    if (theme.isGradient) return { backgroundImage: theme.bgImage, backgroundColor: theme.bg };
+    return { backgroundColor: theme.bg };
 };
 
 const generateIntradayPath = (open, high, low, close, steps = 40) => {
@@ -365,15 +381,36 @@ const AddFundsModal = ({ isOpen, onClose, onConfirm, currencyIcon }) => {
   );
 };
 
-// --- MODAL DE TRADING (CON VALIDACIÓN) ---
+// --- MODAL DE TRADING (CON VALIDACIÓN Y EDICIÓN MANUAL) ---
 const TradeModal = ({ isOpen, onClose, symbol, currentPrice, balance, onConfirm, type, portfolio, currencyIcon, convert }) => {
   const [qty, setQty] = useState(1);
+  
   useEffect(() => { if (isOpen) setQty(1); }, [isOpen]);
+  
   const safePrice = currentPrice || 0;
-  const total = qty * safePrice;
+  // Convertimos a número para cálculos. Si es vacío/invalido, usamos 0.
+  const safeQty = qty === '' ? 0 : parseInt(qty);
+  const total = safeQty * safePrice;
   const currentHolding = portfolio.find(p => p.symbol === symbol)?.qty || 0;
+  
+  // Validaciones
   const canAfford = type === 'buy' ? balance >= total : true;
-  const canSell = type === 'sell' ? currentHolding >= qty : true;
+  const canSell = type === 'sell' ? currentHolding >= safeQty : true;
+  const isValidQty = safeQty > 0; // Debe ser mayor a 0 para operar
+
+  // Handler para el input
+  const handleQtyChange = (e) => {
+    const val = e.target.value;
+    if (val === '') {
+        setQty(''); // Permitir borrar todo
+    } else {
+        const parsed = parseInt(val);
+        if (!isNaN(parsed) && parsed >= 0) {
+            setQty(parsed);
+        }
+    }
+  };
+
   return (
     <AnimatedModal isOpen={isOpen} onClose={onClose}>
       <div className="bg-[#1a1a1a] border border-white/10 w-full rounded-3xl p-6 shadow-2xl text-white relative">
@@ -381,10 +418,41 @@ const TradeModal = ({ isOpen, onClose, symbol, currentPrice, balance, onConfirm,
         <h2 className="text-xl font-bold mb-1 flex items-center gap-2">{type === 'buy' ? <Plus className="text-emerald-400"/> : <Minus className="text-rose-400"/>} {type === 'buy' ? 'Comprar' : 'Vender'} {symbol}</h2>
         <p className="text-xs text-neutral-400 mb-2">Precio: {currencyIcon}{convert(safePrice)}</p>
         {type === 'sell' && <div className="mb-4 text-[10px] uppercase font-bold tracking-wider text-neutral-500">Tienes: <span className="text-white">{currentHolding}</span> acciones</div>}
-        <div className="flex items-center justify-between bg-black/30 p-4 rounded-xl mb-4 border border-white/5"><button onClick={() => setQty(Math.max(1, qty-1))} className="p-2 hover:bg-white/10 rounded-lg"><Minus size={16}/></button><div className="text-center"><span className="text-2xl font-mono font-bold">{qty}</span><p className="text-[10px] text-neutral-500 uppercase">Acciones</p></div><button onClick={() => setQty(qty+1)} className="p-2 hover:bg-white/10 rounded-lg"><Plus size={16}/></button></div>
+        
+        <div className="flex items-center justify-between bg-black/30 p-4 rounded-xl mb-4 border border-white/5">
+            <button onClick={() => setQty(Math.max(1, (parseInt(qty)||0) - 1))} className="p-2 hover:bg-white/10 rounded-lg"><Minus size={16}/></button>
+            <div className="text-center w-full">
+                <input 
+                    type="number" 
+                    value={qty} 
+                    onChange={handleQtyChange}
+                    className="bg-transparent text-2xl font-mono font-bold w-full text-center outline-none"
+                    placeholder="0"
+                />
+                <p className="text-[10px] text-neutral-500 uppercase">Acciones</p>
+            </div>
+            <button onClick={() => setQty((parseInt(qty)||0) + 1)} className="p-2 hover:bg-white/10 rounded-lg"><Plus size={16}/></button>
+        </div>
+
         <div className="flex justify-between items-center text-sm mb-6 px-2"><span className="opacity-60">Total:</span><span className="font-mono font-bold text-lg">{currencyIcon}{convert(total)}</span></div>
         {type === 'sell' && !canSell && <div className="mb-4 text-xs text-center text-rose-500 font-bold animate-pulse">❌ No tienes suficientes acciones</div>}
-        <button onClick={() => { if((type === 'buy' && canAfford) || (type === 'sell' && canSell)) { onConfirm(qty); onClose(); } }} disabled={(type === 'buy' && !canAfford) || (type === 'sell' && !canSell)} className={`w-full py-3 rounded-xl font-bold transition-all ${(type === 'buy' && !canAfford) || (type === 'sell' && !canSell) ? 'bg-neutral-700 text-neutral-500 cursor-not-allowed' : type === 'buy' ? 'bg-emerald-500 hover:bg-emerald-400 text-black' : 'bg-rose-500 hover:bg-rose-400 text-white'}`}>{type === 'buy' ? (canAfford ? 'CONFIRMAR COMPRA' : 'FONDOS INSUFICIENTES') : (canSell ? 'CONFIRMAR VENTA' : 'ERROR DE VENTA')}</button>
+        
+        <button 
+            onClick={() => { 
+                if (isValidQty && ((type === 'buy' && canAfford) || (type === 'sell' && canSell))) { 
+                    onConfirm(safeQty); 
+                    onClose(); 
+                } 
+            }} 
+            disabled={!isValidQty || (type === 'buy' && !canAfford) || (type === 'sell' && !canSell)} 
+            className={`w-full py-3 rounded-xl font-bold transition-all ${
+                !isValidQty || (type === 'buy' && !canAfford) || (type === 'sell' && !canSell) 
+                ? 'bg-neutral-700 text-neutral-500 cursor-not-allowed' 
+                : type === 'buy' ? 'bg-emerald-500 hover:bg-emerald-400 text-black' : 'bg-rose-500 hover:bg-rose-400 text-white'
+            }`}
+        >
+            {!isValidQty ? 'INGRESA CANTIDAD' : (type === 'buy' ? (canAfford ? 'CONFIRMAR COMPRA' : 'FONDOS INSUFICIENTES') : (canSell ? 'CONFIRMAR VENTA' : 'ERROR DE VENTA'))}
+        </button>
       </div>
     </AnimatedModal>
   );
@@ -489,7 +557,9 @@ export default function PocketWallstreet() {
   useEffect(() => { if (!searchTerm) { setSuggestions([]); return; } if (debounceRef.current) clearTimeout(debounceRef.current); debounceRef.current = setTimeout(async () => { const res = await fetchFinnhub(`search?q=${searchTerm}`); if (res?.result) setSuggestions(res.result.slice(0, 5)); }, 500); }, [searchTerm]);
   
   const t = config.theme; 
-  const bgStyle = { backgroundImage: t.bgImage, backgroundColor: t.bg };
+  // Fondeo Dinámico basado en viewMode
+  const bgStyle = getBackgroundStyle(t, viewMode);
+  
   const currentHolding = portfolio.find(p => p.symbol === selectedStock?.symbol);
 
   return (
