@@ -1,7 +1,10 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx' // Tu archivo de 500 líneas
+import './index.css' // <--- ¡ESTA LÍNEA ES VITAL!
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(<React.StrictMode><App /></React.StrictMode>);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
